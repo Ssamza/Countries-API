@@ -15,28 +15,28 @@ module.exports = (sequelize) => {
           isAlpha: true,
         },
       },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       official_flag: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      continent: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       capital: {
         type: DataTypes.STRING,
+        allowNull: true,
+      },
+      continent: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       subregion: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       area: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       population: {
