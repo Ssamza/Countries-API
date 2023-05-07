@@ -23,7 +23,9 @@ function Detail() {
 
   return (
     <div>
-      <button onClick={backButton}>Back</button>
+      <div>
+        <button onClick={backButton}>Back</button>
+      </div>
       <img src={country.official_flag} alt={country.name + "Flag"} />
       <div>
         <span>Name: {country.name}</span>
