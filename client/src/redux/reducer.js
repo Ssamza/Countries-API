@@ -4,6 +4,7 @@ import {
   GET_NAME,
   POST_ACTIVITY,
   GET_ACTIVITIES,
+  CLEAN_DETAIL,
 } from "./action";
 
 let initialState = {
@@ -26,6 +27,11 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         countryDetail: action.payload,
+      };
+    case CLEAN_DETAIL:
+      return {
+        ...state,
+        countryDetail: {},
       };
     case GET_NAME:
       return {

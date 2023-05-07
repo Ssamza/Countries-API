@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);
-
+  console.log(allCountries);
   return (
     <div>
       <Cards allCountries={allCountries} />

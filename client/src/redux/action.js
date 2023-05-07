@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_COUNTRIES = "GET_COUNTRIES";
 export const GET_COUNTRY_DETAIL = "GET_COUNTRY_DETAIL";
+export const CLEAN_DETAIL = "CLEAN_DETAIL";
 export const GET_NAME = "GET_NAME";
 export const POST_ACTIVITY = "POST_ACTIVITY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
@@ -20,6 +21,10 @@ export function getCountryDetail(id) {
     const response = await axios.get(`${URL}/countries/${id}`);
     return dispatch({ type: "GET_COUNTRY_DETAIL", payload: response.data });
   };
+}
+
+export function cleanDetail() {
+  return { type: "CLEAN_DETAIL" };
 }
 
 export function getName(name) {
