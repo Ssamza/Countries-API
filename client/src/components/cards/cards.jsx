@@ -3,7 +3,7 @@ import Card from "../card/card";
 
 function Cards({ allCountries }) {
   return (
-    <div>
+    <div className={style.container}>
       {allCountries.map((country) => {
         return <Card country={country} />;
       })}

@@ -18,7 +18,7 @@ function Detail() {
   }, [dispatch, id]);
 
   function backButton() {
-    navigate("/");
+    navigate("/home");
   }
 
   return (

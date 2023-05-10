@@ -1,0 +1,91 @@
+
+@font-face {
+    font-family: Rounded;
+    src: url("../../fonts/ConfigRoundedBold.ttf");
+}
+
+@font-face {
+    font-family: arialRounded;
+    src: url("../../fonts/ARLRDBD.TTF");
+}
+
+
+.back {
+    background: url("../../images/lost.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* background-color: red; */
+    background-position: 92% 90%;
+
+}
+
+.logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border-radius: 10px;
+    height: 50px;
+
+    
+}
+
+.text{
+    position: absolute;
+        top: 250px;
+        left: 160px ;
+    width: 500px;
+
+}
+
+.title{
+    font-family:arialRounded, sans-serif;
+        font-weight:900;
+        /* letter-spacing: 3px; */
+        font-size: 60px;
+        text-transform:uppercase ;
+        color: rgb(22, 22, 22);
+        
+}
+
+.first{
+    font-size: 80px;
+}
+
+.parag {
+    font-family: monospace;
+    font-size: 13px;
+    text-align: justify;
+    letter-spacing: 1px;
+    line-height: 18px;
+}
+
+
+.app{
+    font-size: 10px;
+}
+
+.app::after{
+    content: " \00A9";
+    font-size: 8px;
+}
+
+.button {
+    border-radius: 50px;
+    background-color:#455a64;;
+    font-family: monospace;
+    color: white;
+    width: 110px;
+    height: 27px;
+    font-size: 14px;
+}
+
+.button:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+.color{
+    height: 100px;
+    background-color: #A8D4AD;
+}

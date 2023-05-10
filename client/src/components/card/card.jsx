@@ -14,20 +14,29 @@ function Card({ country }) {
   } = country;
 
   return (
-    <div>
-      <img src={official_flag} alt={country.name + "Flag"} />
-      <div>
-        <span>Name:</span>
-        <NavLink to={`/detail/${id}`}>
-          {" "}
-          <span>{name}</span>
-        </NavLink>
+    <div className={style.container}>
+      <div className={style.org}>
+        <div className={style.back}>
+          <img
+            className={style.img}
+            src={official_flag}
+            alt={country.name + "Flag"}
+          />
+        </div>
+        <hr className={style.hr} />
+        <div className={style.textC}>
+          <div className={style.text}>
+            <NavLink to={`/detail/${id}`} className={style.line}>
+              {" "}
+              <span className={style.url}>{name}</span>
+            </NavLink>
+            <p>
+              Continent:{" "}
+              <span className={style.cont}>{continent ? continent : "-"}</span>
+            </p>
+          </div>
+        </div>
       </div>
-      <p>Capital: {capital ? capital : "-"}</p>
-      <p>Continent: {continent ? continent : "-"}</p>
-      <p>Subregion: {subregion ? subregion : "-"}</p>
-      <p>Area: {area}</p>
-      <p>Population: {population}</p>
     </div>
   );
 }
