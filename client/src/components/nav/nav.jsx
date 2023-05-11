@@ -20,16 +20,23 @@ function Nav() {
 
   return (
     <div>
-      <div className={style.searchContainer}>
-        <input
-          className={style.input}
-          type="search"
-          placeholder="Search Country"
-          onChange={handleChange}
-        />
-        <button type="submit" className={style.button} onClick={handleSubmit}>
-          <i class="fas fa-search icon"></i>
-        </button>
+      <div className={style.all}>
+        <div className={style.searchContainer}>
+          <input
+            className={style.input}
+            type="search"
+            placeholder="Search Country"
+            onChange={handleChange}
+          />
+          <button type="submit" className={style.button} onClick={handleSubmit}>
+            <i class="fas fa-search icon"></i>
+          </button>
+          <img
+            className={style.img}
+            src={require("../../images/planet1.png")}
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );

@@ -35,6 +35,22 @@ function Detail() {
       <p>Subregion: {country.subregion ? country.subregion : "-"}</p>
       <p>Area: {country.area}</p>
       <p>Population: {country.population}</p>
+      <div>
+        {country.activities && country.activities.length > 0 ? (
+          <div>
+            <p>Activities</p>
+            <ul>
+              {country.activities.map((activity) => (
+                <ul>
+                  <li>Name: {activity.name}</li>
+                  <li>Difficulty: {activity.difficulty}</li>
+                  <li>Season: {activity.season}</li>
+                </ul>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@
     align-items: center;
     background-color: #9B9FB5;
     width: 350px;
-    height: 300px;
+    height: 290px;
     padding: 10px;
     border-radius: 40px 40px 20px 20px;
     margin: 50px 16px 20px 16px;
@@ -26,6 +26,7 @@
 
 .img{
     height: 160px;
+    width: 300px;
     border-radius: 9px;
 }
 
@@ -44,11 +45,8 @@
     font-family: monospace;
 }
 
-.line{
-    text-decoration:none;
-}
 
-.url{
+.name{
     display: inline-block;
     font-size: 15px;
     color: black;
@@ -61,6 +59,33 @@
     font-style: oblique;
 }
 
-.url:hover{
-    font-weight: lighter;
+.buttonC{
+    margin-bottom: 10px;
+    margin-left: 310px;
+    /* background-color: red; */
+
+    
+}
+
+.button1{
+        border-radius: 8px;
+        font-family: arial;
+        font-weight: lighter;
+        font-size: 11px;
+        background-color: rgb(218, 218, 218);
+        color: black;
+}
+
+.button1:hover{
+    transform: scale(1.04);
+}
+
+.icon {
+    color: #393674;
+    font-size: 14px;
+}
+
+.Ant {
+    color: rgba(255, 255, 255, 0.875);
+    font-size: 14px;
 }

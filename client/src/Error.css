@@ -1,0 +1,41 @@
+@font-face {
+    font-family: arialRounded;
+    src: url("./fonts/ARLRDBD.TTF");
+}
+
+.Text{
+    margin-top: 50px;
+    font-size: 12px;
+    /* color: red; */
+    font-family: monospace;
+}
+
+.Back{
+    background: url("./images/alien.png");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: 56%;
+    background-position: 50% -90%;
+}
+
+.buttonC{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.button {
+    border-radius: 0 50px 50px  0 ;
+    background-color: #455a64;
+    ;
+    font-family: monospace;
+    color: white;
+    width: 110px;
+    height: 27px;
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+.button:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}

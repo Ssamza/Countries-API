@@ -15,7 +15,7 @@ function Landing() {
           <h1 className={style.title}>
             <span className={style.first}>C</span>apital
             <span className={style.first}>D</span>ata{" "}
-            <span className={style.app}>App</span>
+            <span className={style.app}>app</span>
           </h1>
           <h3 className={style.parag}>
             <br />
