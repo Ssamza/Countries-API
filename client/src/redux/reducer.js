@@ -5,6 +5,9 @@ import {
   POST_ACTIVITY,
   GET_ACTIVITIES,
   CLEAN_DETAIL,
+  BY_ABC,
+  BY_NUMBER,
+  BY_CONTINENT,
 } from "./action";
 
 let initialState = {
@@ -16,6 +19,9 @@ let initialState = {
 };
 
 function rootReducer(state = initialState, action) {
+  const { allCountries } = state;
+  const { allCountriesCopy } = state;
+
   switch (action.type) {
     case GET_COUNTRIES:
       return {
@@ -47,6 +53,49 @@ function rootReducer(state = initialState, action) {
       return {
         ...state,
         activities: action.payload,
+      };
+    case BY_ABC:
+      let countriesAbc = [];
+      if (action.payload === "top") {
+        countriesAbc = [...allCountries].sort((a, b) =>
+          a.name.localeCompare(b.name)
+        );
+      } else if (action.payload === "bottom") {
+        countriesAbc = [...allCountries].sort((a, b) =>
+          b.name.localeCompare(a.name)
+        );
+      }
+      return {
+        ...state,
+        allCountries: countriesAbc,
+      };
+    case BY_NUMBER:
+      let countriesPop = [];
+      if (action.payload === "Greater") {
+        countriesPop = [...allCountries].sort(
+          (a, b) => b.population - a.population
+        );
+      } else if (action.payload === "Lesser") {
+        countriesPop = [...allCountries].sort(
+          (a, b) => a.population - b.population
+        );
+      }
+      return {
+        ...state,
+        allCountries: countriesPop,
+      };
+    case BY_CONTINENT:
+      let continents = [];
+      if (action.payload === "all") {
+        continents = [...allCountriesCopy];
+      } else {
+        continents = [...allCountriesCopy].filter(
+          (continent) => continent.continent === action.payload
+        );
+      }
+      return {
+        ...state,
+        allCountries: continents,
       };
     default:
       return state;

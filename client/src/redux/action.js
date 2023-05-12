@@ -7,6 +7,12 @@ export const GET_NAME = "GET_NAME";
 export const POST_ACTIVITY = "POST_ACTIVITY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 
+//filterS
+export const BY_ABC = "BY_ABC";
+export const BY_NUMBER = "BY_NUMBER";
+export const BY_ACT = "BY_ACT";
+export const BY_CONTINENT = "BY_CONTINENT";
+
 export function getCountries() {
   return async function (dispatch) {
     const URL = "http://localhost:3001";
@@ -49,4 +55,22 @@ export function getActivities() {
     const response = await axios.get(`${URL}/activities`);
     return dispatch({ type: "GET_ACTIVITIES", payload: response.data });
   };
+}
+
+//filter
+
+export function byAbc(abc) {
+  return { type: "BY_ABC", payload: abc };
+}
+
+export function byNumber(population) {
+  return { type: "BY_NUMBER", payload: population };
+}
+
+export function byAct(act) {
+  return { type: "BY_NUMBER", payload: act };
+}
+
+export function byContinent(continent) {
+  return { type: "BY_CONTINENT", payload: continent };
 }

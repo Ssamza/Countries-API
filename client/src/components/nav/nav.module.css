@@ -3,6 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
+
 }
 
 .searchContainer{
@@ -12,7 +13,6 @@
     box-shadow: -2px 5px 9px 0px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: -2px 5px 9px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -2px 5px 9px 0px rgba(0, 0, 0, 0.75);
-
 }
 /* background-color: #7A7174; */
 

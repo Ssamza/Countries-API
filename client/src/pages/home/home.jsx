@@ -2,9 +2,10 @@ import style from "./home.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getCountries, getName } from "../../redux/action";
+import { getCountries } from "../../redux/action";
 import Cards from "../../components/cards/cards";
 import Nav from "../../components/nav/nav";
+import Filters from "./filters";
 
 function Home() {
   const dispatch = useDispatch();
@@ -14,8 +15,10 @@ function Home() {
     dispatch(getCountries());
   }, [dispatch]);
   console.log(allCountries);
+
   return (
     <div>
+      <Filters />
       <div>
         <Nav />
       </div>
