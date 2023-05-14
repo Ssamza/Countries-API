@@ -1,7 +1,63 @@
+.sort{
+    position: relative;
+        font-size: 12px;
+        font-family: monospace;
+        display: inline-block;
+        top: -24px;
+        left:54px;
+
+}
+
 .all{
         position: fixed;
-        top: 0px;
-        left: 0;
+        top: 45px;
+        left: 205px;
         z-index: 1;
+        
+    }
+
+    .actC{
+            position: fixed;
+                top: 45px;
+                right: 380px;
+                z-index: 1;                
+    }
+    .abc{
+        font-family: monospace;
+        border-radius: 10px;
+            height: 1.8em;
+            width: 6.5em;
+            color: white;
+            background-color: #A8D4AD;
+
+    }
+
+    .pop{
+        font-family: monospace;
+        border-radius: 10px;
+            height: 1.8em;
+            width: 7.3em;
+            color: white;
+            background-color: #A8D4AD;
+            margin-left: 2px;
+    }
+
+    .cont{
+        font-family: monospace;
+        border-radius: 10px;
+            height: 1.8em;
+            width: 4.5em;
+            color: white;
+            background-color: #A8D4AD;
+            margin-left: 2px;
+    }
+
+    .act{
+        font-family: monospace;
+        border-radius: 10px;
+        height: 1.8em;
+        width: 7.3em;   
+        color: white;
+        background-color: #A8D4AD;
 
     }

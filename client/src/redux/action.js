@@ -6,6 +6,7 @@ export const CLEAN_DETAIL = "CLEAN_DETAIL";
 export const GET_NAME = "GET_NAME";
 export const POST_ACTIVITY = "POST_ACTIVITY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
+export const CLEAR_COUNTRIES = "CLEAR_COUNTRIES";
 
 //filterS
 export const BY_ABC = "BY_ABC";
@@ -57,6 +58,10 @@ export function getActivities() {
   };
 }
 
+export function clearCountries() {
+  return { type: "CLEAR_COUNTRIES" };
+}
+
 //filter
 
 export function byAbc(abc) {
@@ -68,7 +73,7 @@ export function byNumber(population) {
 }
 
 export function byAct(act) {
-  return { type: "BY_NUMBER", payload: act };
+  return { type: "BY_ACT", payload: act };
 }
 
 export function byContinent(continent) {

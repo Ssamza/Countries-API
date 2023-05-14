@@ -8,6 +8,8 @@ import {
   BY_ABC,
   BY_NUMBER,
   BY_CONTINENT,
+  BY_ACT,
+  CLEAR_COUNTRIES,
 } from "./action";
 
 let initialState = {
@@ -21,6 +23,7 @@ let initialState = {
 function rootReducer(state = initialState, action) {
   const { allCountries } = state;
   const { allCountriesCopy } = state;
+  const { activities } = state;
 
   switch (action.type) {
     case GET_COUNTRIES:
@@ -97,6 +100,20 @@ function rootReducer(state = initialState, action) {
         ...state,
         allCountries: continents,
       };
+
+    case BY_ACT:
+      let act = [...activities].map((act) => act === action.payload);
+      return {
+        ...state,
+        allCountries: act,
+      };
+    case CLEAR_COUNTRIES:
+      return {
+        ...state,
+        allCountries: [],
+        allCountriesCopy: [],
+      };
+
     default:
       return state;
   }

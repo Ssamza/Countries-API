@@ -1,0 +1,50 @@
+.form {
+    position: fixed;
+    top: 34px;
+    right: 110px;
+    z-index: 1;
+}
+
+.button {
+    box-shadow: 3px 4px 0px 0px #899599;
+    background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    background-color: #ededed;
+    border-radius: 15px;
+    border: 1px solid #d6bcd6;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(101, 101, 101);
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 14px 21px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #e1e2ed;
+}
+
+.button:hover {
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color: #bab1ba;
+    color: rgb(56, 56, 56);
+}
+
+.pages button {
+    box-shadow: 1px 2px 0px 0px #899599;
+        background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+        background-color: #ededed;
+    margin: 25px 1px 50px 1px;
+    font-size: 12px;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: 0.1px rgb(59, 58, 58) solid;
+    font-family: monospace,
+}
+
+.pages button:hover {
+    transform: scale(1.04);
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+        background-color: #bab1ba;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
