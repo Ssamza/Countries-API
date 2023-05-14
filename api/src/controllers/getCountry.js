@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Country } = require("../db");
+const { Country, Activity } = require("../db");
 
 const getAPI = async () => {
   const response = await axios.get("https://restcountries.com/v3/all");
@@ -30,7 +30,15 @@ const getAPI = async () => {
 const getAll = async () => {
   const count = await Country.count();
   if (count > 0) {
-    const countriesDB = await Country.findAll();
+    const countriesDB = await Country.findAll({
+      include: {
+        model: Activity,
+        attributes: ["name"],
+        through: {
+          attributes: [],
+        },
+      },
+    });
     return countriesDB;
   } else {
     const countriesAPI = await getAPI();
