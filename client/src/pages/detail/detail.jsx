@@ -22,32 +22,57 @@ function Detail() {
   }
 
   return (
-    <div>
-      <div>
-        <button onClick={backButton}>Back</button>
+    <div className={style.back}>
+      <div className={style.travel}>
+        <span>PI-countries</span>
       </div>
-      <img src={country.official_flag} alt={country.name + "Flag"} />
-      <div>
-        <span>Name: {country.name}</span>
+      <div className={style.buttonC}>
+        <button className={style.button} onClick={backButton}>
+          Back
+        </button>
       </div>
-      <p>Capital: {country.capital ? country.capital : "-"}</p>
-      <p>Continent: {country.continent ? country.continent : "-"}</p>
-      <p>Subregion: {country.subregion ? country.subregion : "-"}</p>
-      <p>Area: {country.area}</p>
-      <p>Population: {country.population}</p>
+      <div className={style.id}>
+        <span>#{country.id}</span>
+      </div>
+      <div className={style.flagC}>
+        <img
+          className={style.flag}
+          src={country.official_flag}
+          alt={country.name + "Flag"}
+        />
+      </div>
+      <div className={style.nameC}>
+        <span className={style.name}>{country.name}</span>
+      </div>
+      <div className={style.text}>
+        <p>Capital: {country.capital ? country.capital : "-"}</p>
+        <p>Continent: {country.continent ? country.continent : "-"}</p>
+        <p>Subregion: {country.subregion ? country.subregion : "-"}</p>
+        <p>Area: {country.area}</p>
+        <p>Population: {country.population}</p>
+      </div>
       <div>
         {country.activities && country.activities.length > 0 ? (
-          <div>
-            <p>Activities</p>
-            <ul>
+          <div className={style.activity}>
+            <p className={style.title}>
+              {" "}
+              <i
+                className={`${style.icon} fas fa-solid fa-mountain-sun`}
+              ></i>{" "}
+              Activities
+            </p>
+            <hr />
+            <div>
+              <br />
               {country.activities.map((activity) => (
-                <ul>
-                  <li>Name: {activity.name}</li>
-                  <li>Difficulty: {activity.difficulty}</li>
-                  <li>Season: {activity.season}</li>
-                </ul>
+                <div className={style.props}>
+                  <span>Name: {activity.name}</span>
+                  <span>Difficulty: {activity.difficulty}</span>
+                  <span>Season: {activity.season}</span>
+                  <br />
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         ) : null}
       </div>

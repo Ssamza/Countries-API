@@ -54,17 +54,22 @@ function Form() {
     if (input.country.length < 1) {
       alert("Please select at least one country");
       return;
-    }
-    try {
-      dispatch(addActivity(input));
-      setInput({
-        name: "",
-        difficulty: 0,
-        season: "",
-        country: [],
-      });
-    } catch (error) {
-      console.log(error);
+    } else if (input.name.length === 0) {
+      alert("Please enter a name");
+    } else if (input.season.length === 0) {
+      alert("Select a season");
+    } else {
+      try {
+        dispatch(addActivity(input));
+        setInput({
+          name: "",
+          difficulty: 0,
+          season: "",
+          country: [],
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
@@ -73,7 +78,9 @@ function Form() {
       <h1>¡CREATE AN ACTIVITY!</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>name: </label>
+          <div>
+            <label>name</label>
+          </div>
           <input
             type="text"
             name="name"
@@ -86,7 +93,9 @@ function Form() {
         </div>
 
         <div>
-          <label>difficulty: </label>
+          <div>
+            <label>difficulty </label>
+          </div>
           <input
             type="number"
             min="1"
@@ -99,8 +108,9 @@ function Form() {
         </div>
 
         <div>
-          <label>season:</label>
-          <br />
+          <div>
+            <label>season:</label>
+          </div>
           <label>
             <input
               type="radio"
@@ -117,7 +127,7 @@ function Form() {
               type="radio"
               name="season"
               value="summer"
-              onChange={handleChange}
+              onClick={handleChange}
             />
             Summer
           </label>
@@ -127,7 +137,7 @@ function Form() {
               type="radio"
               name="season"
               value="autumn"
-              onChange={handleChange}
+              onClick={handleChange}
             />
             Autumn
           </label>
@@ -137,7 +147,7 @@ function Form() {
               type="radio"
               name="season"
               value="winter"
-              onChange={handleChange}
+              onClick={handleChange}
             />
             Winter
           </label>
@@ -181,7 +191,7 @@ function Form() {
             </div>
           ))}
         </div>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );

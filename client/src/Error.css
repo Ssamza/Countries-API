@@ -4,7 +4,7 @@
 }
 
 .Text{
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 12px;
     /* color: red; */
     font-family: monospace;
@@ -13,19 +13,20 @@
 .Back{
     background: url("./images/alien.png");
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 96vh;
     background-size: 56%;
-    background-position: 50% -90%;
+    background-position: 50% ;
 }
 
 .buttonC{
     display: flex;
     justify-content: flex-start;
+    margin-top: -50px;
 }
 
 .button {
     border-radius: 0 50px 50px  0 ;
-    background-color: #455a64;
+    background-color: #A8D4AD;
     ;
     font-family: monospace;
     color: white;
