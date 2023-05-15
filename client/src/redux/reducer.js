@@ -50,7 +50,6 @@ function rootReducer(state = initialState, action) {
     case POST_ACTIVITY:
       return {
         ...state,
-        newActivity: action.payload,
       };
     case GET_ACTIVITIES:
       return {

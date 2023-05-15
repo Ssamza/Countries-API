@@ -1,0 +1,23 @@
+
+
+.iconButton {
+    border: none;
+    background: white;
+} 
+
+form label {
+    text-align:start;
+}
+
+form input {
+    text-align: center;
+    border-radius: 50px;
+    width: 150px;
+}
+
+form select {
+    text-align: center;
+    border-radius: 50px;
+    width: 300px;
+
+}
