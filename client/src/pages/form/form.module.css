@@ -1,6 +1,188 @@
+@font-face {
+    font-family: ocrb;
+    src: url("../../fonts/OCRB\ Regular.ttf");
+}
 
+.back{
+    
+    background: url("../../images/create.png");
+    background-repeat: no-repeat;
+    height: 96vh;
+    background-size: 60%;
+    background-position: 100% ;
+}
+
+.all{
+position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    background-color: #9b9fb536;
+    border-radius: 40px;
+    border: 3px solid rgb(218, 218, 218);
+    height: 480px;
+    width: 300px;
+    padding: 30px 50px 20px 40px;
+    box-shadow: 3px 4px 0px 0px #899599;
+}
+
+.name{
+    position: relative;
+    text-align: start;
+}
+
+.name label{
+    /* background-color: red; */
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: monospace;
+    font-variant: small-caps;
+}
+
+.name input{
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.diff {
+        position: relative;
+        text-align: start;
+    }
+
+.diff label {
+    /* background-color: red; */
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: monospace;
+    font-variant: small-caps;
+}
+
+.diff input {
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* .season{
+    display: flex;
+} */
+
+
+.seasonText{
+    position: relative;
+    left: -120px;
+        font-size: 16px;
+            font-family: monospace;
+            font-variant: small-caps;
+}
+
+.season {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: flex-start;
+    /* background-color: #899599; */
+    width: 320px;
+    margin-bottom: 20px;
+}
+
+.season label{
+    margin-right: 16px;
+    font-family: monospace;
+}
+
+
+
+.countries{
+    text-align: center;
+    border-radius: 10px;
+    width: 305px;
+}
+
+.countriesOp{
+    text-align:center;
+}
+
+.country{
+    border: 3px solid rgb(218, 218, 218);
+    margin-top: 30px;
+    height: 160px;
+    width: 305px;
+    margin-bottom: 16px;
+}
+
+.selectedC{
+    display:inline-flex;
+    flex-wrap: wrap;
+    font-family: monospace;
+}
 
 .iconButton {
     border: none;
-    background: white;
+    background: 0;
 } 
+
+.iconButton:hover{
+    transform: scale(0.8);
+}
+
+.submit {
+    position: relative;
+    box-shadow: 3px 4px 0px 0px #899599;
+    background: linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+    background-color: #ededed;
+    border-radius: 15px;
+    border: 1px solid #d6bcd6;
+    display: inline-block;
+    cursor: pointer;
+    color: rgb(101, 101, 101);
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 14px 21px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #e1e2ed;
+}
+
+.submit:hover {
+    background: linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+    background-color: #bab1ba;
+    color: rgb(56, 56, 56);
+}
+
+.create{
+    position: absolute;
+    top: 100px;
+    right: 150px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: ocrb ,monospace;
+    color: white;
+      -webkit-text-stroke: 0.1px black; 
+    /* text-shadow: -4px 0px 0px rgba(0, 0, 0, 0.6); */
+    text-transform: capitalize;
+}
+
+.buttonC {
+    position: relative;
+    top: 90px;
+    left: -650px;
+}
+
+.button {
+    border-radius: 0 50px 50px 0;
+    background-color: #A8D4AD;
+    font-family: monospace;
+    color: white;
+    width: 110px;
+    height: 27px;
+    font-size: 12px;
+    margin-left: -15px;
+}
+
+.button:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+}

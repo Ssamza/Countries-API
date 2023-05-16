@@ -23,8 +23,12 @@ function Detail() {
 
   return (
     <div className={style.back}>
-      <div className={style.travel}>
-        <span>PI-countries</span>
+      <div className={style.imageC}>
+        <img
+          className={style.image}
+          src={require("../../images/travel.png")}
+          alt=""
+        />
       </div>
       <div className={style.buttonC}>
         <button className={style.button} onClick={backButton}>
