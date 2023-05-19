@@ -50,7 +50,7 @@ function Home() {
   return (
     <div>
       <div>
-        <Filters />
+        <Filters allCountries={allCountries} />
       </div>
       <div className={style.form}>
         <button className={style.button} onClick={createActivity}>

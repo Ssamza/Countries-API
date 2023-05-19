@@ -1,6 +1,6 @@
 import style from "./filters.module.css";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   getActivities,
   byAbc,
@@ -14,11 +14,6 @@ function Filters() {
 
   const [ABC, setABC] = useState("");
   const [pop, setPop] = useState("");
-
-  // useEffect(() => {
-  //   dispatch(getActivities())
-  //   });
-  // }, []);
 
   function handlerByABC(event) {
     dispatch(byAbc(event.target.value));
@@ -89,11 +84,12 @@ function Filters() {
           className={style.act}
           name="byAct"
           onChange={handlerByAct}
-          defaultValue="act"
+          defaultValue="default"
         >
-          <option value="act" disabled>
-            Activities
+          <option value="default" disabled>
+            All
           </option>
+          <option value="act">Activities</option>
         </select>
       </div>
     </div>

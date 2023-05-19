@@ -101,7 +101,7 @@ function rootReducer(state = initialState, action) {
       };
 
     case BY_ACT:
-      let act = [...activities].map((act) => act === action.payload);
+      let act = [];
       return {
         ...state,
         allCountries: act,

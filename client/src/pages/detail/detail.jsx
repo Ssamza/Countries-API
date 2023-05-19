@@ -52,8 +52,13 @@ function Detail() {
         <p>Capital: {country.capital ? country.capital : "-"}</p>
         <p>Continent: {country.continent ? country.continent : "-"}</p>
         <p>Subregion: {country.subregion ? country.subregion : "-"}</p>
-        <p>Area: {country.area}</p>
-        <p>Population: {country.population}</p>
+        <p>
+          Area: {country.area ? country.area.toLocaleString() + " km²" : "-"}
+        </p>
+        <p>
+          Population:{" "}
+          {country.population ? country.population.toLocaleString() : "-"}
+        </p>
       </div>
       <div>
         {country.activities && country.activities.length > 0 ? (
@@ -70,7 +75,7 @@ function Detail() {
               <br />
               {country.activities.map((activity) => (
                 <div className={style.props}>
-                  <span>Name: {activity.name}</span>
+                  <h3 className={style.actName}>{activity.name}</h3>
                   <span>Difficulty: {activity.difficulty}</span>
                   <span>Season: {activity.season}</span>
                   <br />
