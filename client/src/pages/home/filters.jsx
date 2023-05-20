@@ -15,6 +15,12 @@ function Filters() {
   const [ABC, setABC] = useState("");
   const [pop, setPop] = useState("");
 
+  const activities = useSelector((state) => state.activities);
+
+  useEffect(() => {
+    dispatch(getActivities());
+  }, []);
+
   function handlerByABC(event) {
     dispatch(byAbc(event.target.value));
     setABC(event.target.value);
@@ -87,9 +93,16 @@ function Filters() {
           defaultValue="default"
         >
           <option value="default" disabled>
-            All
+            Activities
           </option>
-          <option value="act">Activities</option>
+          {activities &&
+            activities?.map((activity, index) => {
+              return (
+                <option key={index} value={activity.name}>
+                  {activity.name}
+                </option>
+              );
+            })}
         </select>
       </div>
     </div>

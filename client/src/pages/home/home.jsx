@@ -47,31 +47,50 @@ function Home() {
 
   //?
 
+  //loading screen...
+  const [buffering, setBuffering] = useState(false);
+
+  setTimeout(() => {
+    setBuffering(true);
+  }, 900);
+
   return (
     <div>
-      <div>
-        <Filters allCountries={allCountries} />
-      </div>
-      <div className={style.form}>
-        <button className={style.button} onClick={createActivity}>
-          <i class="fa-solid fa-mountain-sun"></i> Share an Activity
-        </button>
-      </div>
-      <div>
-        <Nav />
-      </div>
-      <div>
-        <Cards allCountries={currentCountries} />
-      </div>
-      <div className={style.pages}>
-        <button onClick={() => previous()}>{"\u00AB"}</button>
-        {Array.from({ length: totalPages }).map((x, index) => (
-          <button key={index} onClick={() => setCurrentPage(index + 1)}>
-            {index + 1}
-          </button>
-        ))}
-        <button onClick={() => next()}>{"\u00BB"}</button>
-      </div>
+      {buffering ? (
+        <>
+          <div>
+            <Filters allCountries={allCountries} />
+          </div>
+          <div className={style.form}>
+            <button className={style.button} onClick={createActivity}>
+              <i class="fa-solid fa-mountain-sun"></i> Share an Activity
+            </button>
+          </div>
+          <div>
+            <Nav />
+          </div>
+          <div>
+            <Cards allCountries={currentCountries} />
+          </div>
+          <div className={style.pages}>
+            <button onClick={() => previous()}>{"\u00AB"}</button>
+            {Array.from({ length: totalPages }).map((x, index) => (
+              <button key={index} onClick={() => setCurrentPage(index + 1)}>
+                {index + 1}
+              </button>
+            ))}
+            <button onClick={() => next()}>{"\u00BB"}</button>
+          </div>
+        </>
+      ) : (
+        <div className={style.backgroundGif}>
+          <img
+            src={require("../../images/giff.gif")}
+            alt="buffering"
+            className={style.loading}
+          />
+        </div>
+      )}
     </div>
   );
 }

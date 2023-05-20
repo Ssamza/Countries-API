@@ -25,8 +25,8 @@ function Landing() {
             <br />
             <br />
             <br />
-            Explore the hidden gems of the world and embark on an unforgettable
-            journey to the unknown.
+            ¡Explore the hidden gems of the world and find your next
+            destination!
           </h3>
           <br />
           <br />

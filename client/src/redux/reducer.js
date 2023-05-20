@@ -101,11 +101,24 @@ function rootReducer(state = initialState, action) {
       };
 
     case BY_ACT:
-      let act = [];
-      return {
-        ...state,
-        allCountries: act,
-      };
+      console.log("activity", activities);
+      const selectedActivity = [...activities].find(
+        (activity) => activity.name === action.payload
+      );
+
+      if (selectedActivity) {
+        const countriesWithActivity = [...allCountriesCopy].filter((country) =>
+          selectedActivity.countries.some(
+            (countryAct) => countryAct.name === country.name
+          )
+        );
+        return {
+          ...state,
+          allCountries: countriesWithActivity,
+        };
+      } else {
+        return state;
+      }
     case CLEAR_COUNTRIES:
       return {
         ...state,

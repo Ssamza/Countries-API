@@ -11,12 +11,12 @@
 
 
 .back {
-    background: url("../../images/lost.png");
-    background-size: 50%;
+    background: url("../../images/map.png");
+    background-size: 60%;
     background-repeat: no-repeat;
     height: 100vh;
     /* background-color: red; */
-    background-position: 92% 150%;
+    background-position: 95% 0%;
 
 }
 
@@ -33,7 +33,7 @@
 .text{
     position: absolute;
         top: 225px;
-        left: 150px ;
+        left: 130px ;
     width: 400px;
 
 }

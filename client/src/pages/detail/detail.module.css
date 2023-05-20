@@ -146,3 +146,15 @@
 .icon{
     color: rgb(41, 41, 83);
 }
+
+/* .backgroundGif{
+    position: relative;
+    top: 200px;
+    left: 0%;
+}
+
+.loading{
+    height: 350px;
+    filter: brightness(100%) hue-rotate(10deg) saturate(35%);
+    
+} */
