@@ -11,7 +11,7 @@ const getAct = async () => {
     },
   });
   if (activity.length === 0) {
-    throw Error("No activities available");
+    return;
   } else {
     return activity;
   }
