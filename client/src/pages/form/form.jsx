@@ -1,6 +1,11 @@
 import style from "./form.module.css";
 import { useEffect, useState } from "react";
-import { getCountries, clearCountries, addActivity } from "../../redux/action";
+import {
+  getCountries,
+  getActivities,
+  clearCountries,
+  addActivity,
+} from "../../redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -8,9 +13,11 @@ function Form() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const countries = useSelector((state) => state.allCountries);
+  const activities = useSelector((state) => state.activities);
 
   useEffect(() => {
     dispatch(getCountries());
+    dispatch(getActivities());
     return () => {
       dispatch(clearCountries());
     };
@@ -62,6 +69,11 @@ function Form() {
       alert("Please enter a name");
     } else if (input.season.length === 0) {
       alert("Select a season");
+    } else if (
+      activities.length > 0 &&
+      activities.some((activity) => activity.name === input.name)
+    ) {
+      alert("Activity already exists!");
     } else {
       try {
         dispatch(addActivity(input));
