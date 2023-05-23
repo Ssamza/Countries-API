@@ -2,7 +2,10 @@ const axios = require("axios");
 const { Country, Activity } = require("../db");
 
 const getAPI = async () => {
-  const response = await axios.get("https://restcountries.com/v3/all");
+  const response = await axios.get(
+    "https://rest-countries.up.railway.app/v3/all"
+  );
+  // "https://restcountries.com/v3/all"
   const data = response.data;
 
   const countries = data.map((country) => {
