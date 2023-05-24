@@ -1,9 +1,15 @@
 const { Router } = require("express");
-const { getActivity, postActivity } = require("../handlers/activityH");
+const {
+  getActivity,
+  postActivity,
+  deleteActivity,
+} = require("../handlers/activityH");
 const activityRouter = Router();
 
 activityRouter.post("/", postActivity);
 
 activityRouter.get("/", getActivity);
+
+activityRouter.delete("/", deleteActivity);
 
 module.exports = activityRouter;
