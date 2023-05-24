@@ -1,6 +1,7 @@
 import style from "./filters.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
   getActivities,
   byAbc,
@@ -9,8 +10,9 @@ import {
   byAct,
 } from "../../redux/action";
 
-function Filters() {
+function Filters({ currentPage, setCurrentPage }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [ABC, setABC] = useState("");
   const [pop, setPop] = useState("");
@@ -20,6 +22,11 @@ function Filters() {
   useEffect(() => {
     dispatch(getActivities());
   }, []);
+
+  function handlePage() {
+    setCurrentPage(1);
+    navigate(`/home/1`);
+  }
 
   function handlerByABC(event) {
     dispatch(byAbc(event.target.value));
@@ -46,7 +53,10 @@ function Filters() {
         <select
           className={style.abc}
           name="byAbc"
-          onChange={handlerByABC}
+          onChange={(event) => {
+            handlerByABC(event);
+            handlePage();
+          }}
           defaultValue="select"
         >
           <option value="select" disabled>
@@ -59,7 +69,10 @@ function Filters() {
         <select
           className={style.pop}
           name="byPop"
-          onChange={handlerByPop}
+          onChange={(event) => {
+            handlerByPop(event);
+            handlePage();
+          }}
           defaultValue="select"
         >
           <option value="select" disabled>
@@ -72,9 +85,15 @@ function Filters() {
         <select
           className={style.cont}
           name="byCont"
-          onChange={handlerByCont}
-          defaultValue="all"
+          onChange={(event) => {
+            handlerByCont(event);
+            handlePage();
+          }}
+          defaultValue="cont"
         >
+          <option value="cont" disabled>
+            Continent
+          </option>
           <option value="all">All</option>
           <option value="North America">North America</option>
           <option value="South America">South America</option>
@@ -89,7 +108,10 @@ function Filters() {
         <select
           className={style.act}
           name="byAct"
-          onChange={handlerByAct}
+          onChange={(event) => {
+            handlerByAct(event);
+            handlePage();
+          }}
           defaultValue="default"
         >
           <option value="default" disabled>

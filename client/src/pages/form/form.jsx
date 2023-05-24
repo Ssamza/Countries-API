@@ -18,10 +18,10 @@ function Form() {
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivities());
-    return () => {
-      dispatch(clearCountries());
-    };
-  }, [dispatch]);
+    // return () => {
+    //   dispatch(clearCountries());
+    // };
+  }, []);
 
   const [input, setInput] = useState({
     name: "",
