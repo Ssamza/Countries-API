@@ -10,6 +10,6 @@ activityRouter.post("/", postActivity);
 
 activityRouter.get("/", getActivity);
 
-activityRouter.delete("/", deleteActivity);
+activityRouter.delete("/:id", deleteActivity);
 
 module.exports = activityRouter;

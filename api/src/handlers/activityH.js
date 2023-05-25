@@ -28,7 +28,8 @@ const getActivity = async (req, res) => {
 
 const deleteActivity = async (req, res) => {
   try {
-    const response = await delAct();
+    const { id } = req.params;
+    const response = await delAct(id);
     res.status(200).json(response);
   } catch (error) {
     res.status(400).json({ error: error.message });
