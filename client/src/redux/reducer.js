@@ -10,6 +10,7 @@ import {
   BY_CONTINENT,
   BY_ACT,
   CLEAR_COUNTRIES,
+  DELETE_ACT,
 } from "./action";
 
 let initialState = {
@@ -124,6 +125,11 @@ function rootReducer(state = initialState, action) {
         ...state,
         allCountries: [],
         allCountriesCopy: [],
+      };
+    case DELETE_ACT:
+      return {
+        ...state,
+        activities: action.payload,
       };
 
     default:

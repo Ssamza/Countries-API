@@ -147,6 +147,20 @@
     color: rgb(41, 41, 83);
 }
 
+.delete {
+        
+
+            border: none;
+            width: 30px;
+            margin-left: 83px;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            background-color: #e8e8e9;;
+        }
+    
+.delete:hover {
+            transform: scale(0.8);
+        }
 /* .backgroundGif{
     position: relative;
     top: 200px;

@@ -2,23 +2,44 @@ import style from "./detail.module.css";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { cleanDetail, getCountryDetail } from "../../redux/action";
+import {
+  cleanDetail,
+  delActivities,
+  getActivities,
+  getCountryDetail,
+} from "../../redux/action";
 
 function Detail() {
   const country = useSelector((state) => state.countryDetail);
+  const activities = useSelector((state) => state.activities);
+  const [updateAct, setUpdateAct] = useState(false);
+
   const { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
+    setUpdateAct(false);
     dispatch(getCountryDetail(id));
+    dispatch(getActivities());
     return () => {
       dispatch(cleanDetail());
     };
-  }, [dispatch, id]);
+  }, [dispatch, id, updateAct]);
 
   function backButton() {
     navigate("/home");
+  }
+
+  function handleChange() {
+    const idAct = activities.find((activity) =>
+      country.activities.some((countryAct) => countryAct.name === activity.name)
+    );
+    console.log("filtrado", idAct);
+
+    if (idAct) {
+      dispatch(delActivities(idAct.id)).then(() => setUpdateAct(true));
+    }
   }
 
   return (
@@ -80,6 +101,13 @@ function Detail() {
                     <span>Difficulty: {activity.difficulty}</span>
                     <span>Season: {activity.season}</span>
                     <br />
+                    <button
+                      className={style.delete}
+                      onClick={handleChange}
+                      title={`eliminate`}
+                    >
+                      ⛔
+                    </button>
                   </div>
                 ))}
               </div>

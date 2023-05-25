@@ -7,6 +7,7 @@ export const GET_NAME = "GET_NAME";
 export const POST_ACTIVITY = "POST_ACTIVITY";
 export const GET_ACTIVITIES = "GET_ACTIVITIES";
 export const CLEAR_COUNTRIES = "CLEAR_COUNTRIES";
+export const DELETE_ACT = "DELETE_ACT";
 
 //filterS
 export const BY_ABC = "BY_ABC";
@@ -18,6 +19,7 @@ export function getCountries() {
   return async function (dispatch) {
     const URL = "http://localhost:3001";
     const response = await axios.get(`${URL}/countries`);
+    console.log(response.data);
     return dispatch({ type: GET_COUNTRIES, payload: response.data });
   };
 }
@@ -55,6 +57,16 @@ export function getActivities() {
     const URL = "http://localhost:3001";
     const response = await axios.get(`${URL}/activities`);
     return dispatch({ type: GET_ACTIVITIES, payload: response.data });
+  };
+}
+
+export function delActivities(idAct) {
+  return async function (dispatch) {
+    console.log("ID de la actividad:", idAct);
+    const URL = "http://localhost:3001";
+    const response = await axios.delete(`${URL}/activities/${idAct}`);
+    console.log(response);
+    return dispatch({ type: DELETE_ACT, payload: response.data });
   };
 }
 
