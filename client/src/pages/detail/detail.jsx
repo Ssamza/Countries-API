@@ -104,7 +104,7 @@ function Detail() {
                     <button
                       className={style.delete}
                       onClick={handleChange}
-                      title={`eliminate`}
+                      title={`Click to eliminate`}
                     >
                       ⛔
                     </button>

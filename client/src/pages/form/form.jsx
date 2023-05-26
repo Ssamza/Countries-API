@@ -217,7 +217,7 @@ function Form() {
                   className={style.iconButton}
                   onClick={handleDelete}
                   value={c}
-                  title={`eliminate`}
+                  title={`Click to eliminate`}
                 >
                   ⛔
                 </button>
