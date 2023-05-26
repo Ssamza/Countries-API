@@ -14,13 +14,11 @@ function Form() {
   const navigate = useNavigate();
   const countries = useSelector((state) => state.allCountries);
   const activities = useSelector((state) => state.activities);
+  console.log("acts", activities);
 
   useEffect(() => {
     dispatch(getCountries());
     dispatch(getActivities());
-    // return () => {
-    //   dispatch(clearCountries());
-    // };
   }, []);
 
   const [input, setInput] = useState({
@@ -71,7 +69,9 @@ function Form() {
       alert("Select a season");
     } else if (
       activities.length > 0 &&
-      activities.some((activity) => activity.name === input.name)
+      activities.some(
+        (activity) => activity.name.toLowerCase() === input.name.toLowerCase()
+      )
     ) {
       alert("Activity already exists!");
     } else {

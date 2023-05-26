@@ -38,7 +38,8 @@ function Detail() {
     console.log("filtrado", idAct);
 
     if (idAct) {
-      dispatch(delActivities(idAct.id)).then(() => setUpdateAct(true));
+      dispatch(delActivities(idAct.id));
+      setUpdateAct(true);
     }
   }
 
