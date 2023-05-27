@@ -9,12 +9,39 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+function Validate(input) {
+  let error = {};
+
+  if (!input.name) {
+    error.name = "Please enter a name";
+  } else if (!/[A-Z\s]+$/i.test(input.name)) {
+    error.name = "Letters only";
+  } else if (input.name.length === 20) {
+    error.name = "Max. 20 characters";
+  }
+
+  if (!input.difficulty || input.difficulty <= 0) {
+    error.difficulty = "Select a difficulty";
+  } else if (input.difficulty > 5) {
+    error.difficulty = "Number btw 1-5";
+  }
+
+  if (!input.season) {
+    error.season = "Select one season";
+  }
+
+  // if (input.country.length >= 0) {
+  //   error.country = "Select at least one Country";
+  // }
+
+  return error;
+}
+
 function Form() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const countries = useSelector((state) => state.allCountries);
   const activities = useSelector((state) => state.activities);
-  console.log("acts", activities);
 
   useEffect(() => {
     dispatch(getCountries());
@@ -28,12 +55,21 @@ function Form() {
     country: [],
   });
 
+  const [error, setError] = useState({});
+
   function handleChange(event) {
-    console.log("event", input);
     setInput({
       ...input,
       [event.target.name]: event.target.value,
     });
+    console.log("event", input);
+    console.log(error);
+    setError(
+      Validate({
+        ...input,
+        [event.target.name]: event.target.value,
+      })
+    );
   }
 
   function handleSelect(event) {
@@ -60,21 +96,21 @@ function Form() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if (input.country.length < 1) {
-      alert("Please select at least one country");
-      return;
-    } else if (input.name.length === 0) {
-      alert("Please enter a name");
-    } else if (input.season.length === 0) {
-      alert("Select a season");
-    } else if (
+    if (
       activities.length > 0 &&
       activities.some(
         (activity) => activity.name.toLowerCase() === input.name.toLowerCase()
       )
     ) {
       alert("Activity already exists!");
-    } else {
+    } else if (input.country.length === 0) {
+      alert("Please select a country");
+    } else if (
+      !error.name &&
+      !error.difficulty &&
+      !error.season &&
+      !error.country
+    ) {
       try {
         dispatch(addActivity(input));
         setInput({
@@ -112,12 +148,14 @@ function Form() {
             <input
               type="text"
               name="name"
-              minLength="3"
-              maxLength="20"
+              maxlength="20"
               value={input.name}
               placeholder=""
               onChange={handleChange}
             />
+          </div>
+          <div className={style.eNC}>
+            <span className={style.errors}>{error ? error.name : ""}</span>
           </div>
 
           <div className={style.diff}>
@@ -126,13 +164,17 @@ function Form() {
             </div>
             <input
               type="number"
-              min="1"
-              max="5"
               name="difficulty"
               value={input.difficulty}
               placeholder=""
+              min="0"
               onChange={handleChange}
             />
+          </div>
+          <div className={style.eNC}>
+            <span className={style.errors}>
+              {error ? error.difficulty : ""}
+            </span>
           </div>
 
           <div>
@@ -144,7 +186,6 @@ function Form() {
                   name="season"
                   value="spring"
                   onClick={handleChange}
-                  required
                 />
                 Spring
               </label>
@@ -179,6 +220,9 @@ function Form() {
                 Winter
               </label>
             </div>
+          </div>
+          <div className={style.eNC}>
+            <span className={style.errors}>{error ? error.season : ""}</span>
           </div>
 
           <div>
@@ -224,6 +268,9 @@ function Form() {
               </div>
             ))}
           </div>
+          {/* <div className={style.eNC}>
+            <span className={style.errors}>{error ? error.country : ""}</span>
+          </div> */}
           <button className={style.submit} type="submit">
             Submit Activity
           </button>

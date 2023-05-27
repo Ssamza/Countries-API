@@ -43,7 +43,7 @@ position: absolute;
     width: 300px;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .diff {
@@ -63,7 +63,7 @@ position: absolute;
     width: 300px;
     border-radius: 10px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 /* .season{
@@ -85,7 +85,7 @@ position: absolute;
     justify-content: flex-start;
     /* background-color: #899599; */
     width: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .season label{
@@ -99,6 +99,7 @@ position: absolute;
     text-align: center;
     border-radius: 10px;
     width: 305px;
+    margin-top: 15px;
 }
 
 .countriesOp{
@@ -107,10 +108,10 @@ position: absolute;
 
 .country{
     border: 3px solid rgb(218, 218, 218);
-    margin-top: 30px;
+    margin-top: 20px;
     height: 160px;
     width: 305px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .selectedC{
@@ -185,4 +186,22 @@ position: absolute;
 .button:hover {
     transform: scale(0.9);
     cursor: pointer;
+}
+
+/* errors */
+
+.eNC{
+    display: inline-block;
+    width: 300px;
+    text-align: right;
+
+    
+}
+
+.errors{
+    /* background-color: white; */
+    color: red;
+    font-family: monospace;
+    font-size: 11px;
+
 }
