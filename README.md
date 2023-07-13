@@ -24,7 +24,7 @@ To get started with the project, follow these steps:
 ## **Project Structure**
 The project follows a client-server architecture:
 
--The client-side code is located in the client directory.
+- The client-side code is located in the client directory.
 - The server-side code is located in the server directory(api).
 - Feel free to explore the code and make any necessary modifications to suit your needs.
 
