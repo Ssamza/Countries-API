@@ -1,10 +1,12 @@
 const getAll = require("../controllers/getCountry");
+// const getAPI = require("../controllers/getCountry");
 const getById = require("../controllers/getByID");
 
 //query=name
 const getCountry = async (req, res) => {
   try {
     const { name } = req.query;
+    // const response = await getAPI();
     const response = await getAll();
     if (name) {
       let countryName = response.filter((country) =>

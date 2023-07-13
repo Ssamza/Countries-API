@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
           isAlpha: true,
         },
       },
-      official_flag: {
+      flags: {
         type: DataTypes.STRING,
         allowNull: false,
       },

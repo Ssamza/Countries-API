@@ -1,17 +1,13 @@
-const axios = require("axios");
+let allCountries = require("../countriesData");
 const { Country, Activity } = require("../db");
+// console.log(allCountries);
 
 const getAPI = async () => {
-  const response = await axios.get(
-    "https://rest-countries.up.railway.app/v3/all"
-  );
-  // "https://restcountries.com/v3/all"
-  const data = response.data;
 
-  const countries = data.map((country) => {
+  const countries = allCountries.map((country) => {
     return {
       id: country.cca3,
-      official_flag: country.flags[1],
+      flags: country.flags.svg,
       name: country.name.common
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, ""),
@@ -51,3 +47,4 @@ const getAll = async () => {
 };
 
 module.exports = getAll;
+// module.exports = getAPI;
