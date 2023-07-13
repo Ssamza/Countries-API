@@ -2,7 +2,7 @@ import style from "./card.module.css";
 import { NavLink } from "react-router-dom";
 
 function Card({ country }) {
-  const { id, official_flag, name, continent } = country;
+  const { id, flags, name, continent } = country;
 
   return (
     <div className={style.container}>
@@ -10,8 +10,8 @@ function Card({ country }) {
         <div className={style.back}>
           <img
             className={style.img}
-            src={official_flag}
-            alt={country.name + "Flag"}
+            src={flags}
+            alt={country.name + " flag"}
           />
         </div>
         <hr className={style.hr} />

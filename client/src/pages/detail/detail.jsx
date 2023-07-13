@@ -64,8 +64,8 @@ function Detail() {
         <div className={style.flagC}>
           <img
             className={style.flag}
-            src={country.official_flag}
-            alt={country.name + "Flag"}
+            src={country.flags}
+            alt={country.name + " flag"}
           />
         </div>
         <div className={style.nameC}>

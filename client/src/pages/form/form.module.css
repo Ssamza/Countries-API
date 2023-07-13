@@ -167,9 +167,8 @@ position: absolute;
 }
 
 .buttonC {
-    position: relative;
-    top: 90px;
-    left: -650px;
+    position: absolute;
+    top: 91px;
 }
 
 .button {

@@ -1,17 +1,17 @@
 import style from "./home.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import { clearCountries, getCountries } from "../../redux/action";
+import { useNavigate} from "react-router-dom";
+import {  getCountries } from "../../redux/action";
 import Cards from "../../components/cards/cards";
 import Nav from "../../components/nav/nav";
 import Filters from "./filters";
 
 function Home() {
-  const { page } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const allCountries = useSelector((state) => state.allCountries);
+  console.log(allCountries);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

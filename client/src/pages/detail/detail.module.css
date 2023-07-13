@@ -32,16 +32,16 @@
 
 .flagC{
   position: relative;
-  top: 150px;
-  left: 100px;
+  top: 180px;
+  left: 120px;
   width: fit-content;
   /* background-color: red; */
 }
 
 .flag {
     border-radius: 20px;
-    height: 220px;
-    width: 350px;
+    height: 300px;
+    max-width: 500px;
 
 }
 
@@ -49,8 +49,8 @@
     position: absolute;
     /* background-color: red; */
     text-align:center;
-    margin-top: 180px;
-    margin-left: 100px;
+    margin-top: 240px;
+    margin-left: 170px;
     width: 350px;
 
 }
@@ -109,10 +109,11 @@
 
 .id{
     position: absolute;
-    right: 43%;
+    top: 20px;
+    right: 740px;
     font-family: ocrb, sans-serif;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     /* background-color: red; */
 
 
@@ -121,9 +122,9 @@
 /* button */
 
 .buttonC {
-    position: relative;
+    position: absolute;
     top: 90px;
-    left: -650px;
+
 }
 
 .button {
